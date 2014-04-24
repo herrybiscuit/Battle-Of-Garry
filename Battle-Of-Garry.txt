@@ -1,4 +1,4 @@
-"battleofgarry"
+"Gamemode"
 {
 	"base"		"sandbox"
 	"title"		"Battle-Of-Garry"

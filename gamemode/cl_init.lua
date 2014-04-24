@@ -1,3 +1,5 @@
+DeriveGamemode("sandbox")
+
 include("shared.lua")
 
 --Show/hide mouse cursor when f2 is pressed
