@@ -17,3 +17,8 @@ end
 function GM:PlayerAuthed( ply, steamID, uniqueID )
 	print("Player: " .. ply:Nick() .. ", has gotten authed.")
 end
+
+function GM:CanPlayerSuicide( ply )
+	ply:PrintMessage(HUD_PRINTTALK, "You can't suicide!")
+	return false 
+end
