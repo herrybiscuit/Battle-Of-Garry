@@ -1,5 +1,5 @@
 GM.Name = "Battle-Of-Garry" // Put Gamemode info here
-GM.Author = "Herrybiscuit and IMSOGUD"
+GM.Author = "IMSOGUD And HerryBiscuit"
 GM.Email = "N/A"
 GM.Website = "N/A"
 
