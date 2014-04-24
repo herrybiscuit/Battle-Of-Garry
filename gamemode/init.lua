@@ -20,28 +20,15 @@ function GM:PlayerAuthed( ply, steamID, uniqueID )
 	print("Player: " .. ply:Nick() .. ", has gotten authed.")
 end
 
---Temp
-/*
---Disconnect message
-function GM:PlayerDisconnected( ply )
-	print("Player: " .. ply:Name() .. " has left the server." )
-end
-*/
+--Load modules
+local fol = GM.FolderName.."/gamemode/modules/" --Set base dir
+local files, folders = file.Find(fol .. "*", "LUA") --Get all module files
 
---Prevents Suicide with explode or kill
-function GM:CanPlayerSuicide( ply )
-	if ply:IsAdmin() then
-		ply:PrintMessage(HUD_PRINTTALK, "You killed your self!")
-		return true
+for _,folder in SortedPairs(folders, true) do
+	if folder == "." or folder == ".." then continue end --If no files then stop
+	
+	--Load module server files
+	for _, File in SortedPairs(file.Find(fol .. folder .."/sv_*.lua", "LUA"), true) do --Get server files
+		include(fol.. folder .. "/" ..File) --Include module's server lua files
 	end
-	ply:PrintMessage(HUD_PRINTTALK, "You can't suicide!")
-	return false 
 end
-
---Disable Noclip for non-admins
-local function DisableNoclip( ply )
-	return ply:IsAdmin()
-end
-
---Add hooks
-hook.Add( "PlayerNoClip", "DisableNoclip", DisableNoclip )
