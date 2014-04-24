@@ -1,6 +1,6 @@
 "Gamemode"
 {
-	"base"		"sandbox"
+	"base"		"base"
 	"title"		"Battle-Of-Garry"
 	"version"	"0.0.17"
 	"maps"		"^bog_"

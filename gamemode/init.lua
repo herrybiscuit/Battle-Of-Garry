@@ -1,4 +1,4 @@
-DeriveGamemode("sandbox")
+DeriveGamemode("base")
 
 AddCSLuaFile("cl_init.lua")
 AddCSLuaFile("shared.lua")
