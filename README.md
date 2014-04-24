@@ -6,4 +6,4 @@ Gamemode for GarrysMod
 Install instructions
 ===============
 
-1.Download the zip file
+1. Download the zip file
