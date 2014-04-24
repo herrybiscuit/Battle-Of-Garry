@@ -23,3 +23,9 @@ function GM:CanPlayerSuicide( ply )
 	ply:PrintMessage(HUD_PRINTTALK, "You can't suicide!")
 	return false 
 end
+
+--Disable Noclip for non-admins
+local function DisableNoclip( ply )
+	return ply:IsAdmin()
+end
+hook.Add( "PlayerNoClip", "DisableNoclip", DisableNoclip )
