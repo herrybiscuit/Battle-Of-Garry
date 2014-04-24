@@ -1,11 +1,14 @@
-"Gamemode"
+"battleofgarry"
 {
-	"base"		"base"
+	"base"		"sandbox"
 	"title"		"Battle-Of-Garry"
+	"version"	"0.0.14"
 	"maps"		"^bog_"
 	"menusystem"	"1"
-	"workshopid"	""
-	
-	"settings"
+
+
+	"icon"  ""
+	"info"  ""
+	"hide"  "0"
 	
 }
