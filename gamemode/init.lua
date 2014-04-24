@@ -31,4 +31,9 @@ for _,folder in SortedPairs(folders, true) do
 	for _, File in SortedPairs(file.Find(fol .. folder .."/sv_*.lua", "LUA"), true) do --Get server files
 		include(fol.. folder .. "/" ..File) --Include module's server lua files
 	end
+	
+	for _, File in SortedPairs(file.Find(fol .. folder .."/cl_*.lua", "LUA"), true) do
+		if File == "cl_interface.lua" then continue end
+		AddCSLuaFile(fol.. folder .. "/" ..File)
+	end
 end

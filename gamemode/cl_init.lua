@@ -2,10 +2,19 @@ DeriveGamemode("base")
 
 include("shared.lua")
 
---Show/hide mouse cursor when f2 is pressed
-local function KeyPress()
-    gui.EnableScreenClicker(input.IsKeyDown(KEY_F2))
+local function LoadModules()
+	local root = GM.FolderName.."/gamemode/modules/"
+
+	local _, folders = file.Find(root.."*", "LUA")
+
+	for _, folder in SortedPairs(folders, true) do
+
+		for _, File in SortedPairs(file.Find(root .. folder .."/cl_*.lua", "LUA"), true) do
+			include(root.. folder .. "/" ..File)
+		end
+	end
 end
 
---Add hooks
-hook.Add("Think", "Clients_Key_F2" ,KeyPress)
+--Config stuff
+
+LoadModules()
