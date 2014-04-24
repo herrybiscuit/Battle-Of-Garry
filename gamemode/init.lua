@@ -18,8 +18,20 @@ function GM:PlayerAuthed( ply, steamID, uniqueID )
 	print("Player: " .. ply:Nick() .. ", has gotten authed.")
 end
 
+--Temp
+/*
+--Disconnect message
+function GM:PlayerDisconnected( ply )
+	print("Player: " .. ply:Name() .. " has left the server." )
+end
+*/
+
 --Prevents Suicide with explode or kill
 function GM:CanPlayerSuicide( ply )
+	if ply:IsAdmin() then
+		ply:PrintMessage(HUD_PRINTTALK, "You killed your self!")
+		return true
+	end
 	ply:PrintMessage(HUD_PRINTTALK, "You can't suicide!")
 	return false 
 end
@@ -28,4 +40,6 @@ end
 local function DisableNoclip( ply )
 	return ply:IsAdmin()
 end
+
+--Add hooks
 hook.Add( "PlayerNoClip", "DisableNoclip", DisableNoclip )
