@@ -2,7 +2,7 @@
 {
 	"base"		"base"
 	"title"		"Battle-Of-Garry"
-	"maps"		"^gm_"
+	"maps"		"^bog_"
 	"menusystem"	"1"
 	"workshopid"	""
 	
