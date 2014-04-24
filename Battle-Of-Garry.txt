@@ -2,7 +2,7 @@
 {
 	"base"		"base"
 	"title"		"Battle-Of-Garry"
-	"version"	"0.0.17"
+	"version"	"0.0.21"
 	"maps"		"^bog_"
 	"menusystem"	"1"
 
