@@ -13,13 +13,10 @@ local function DisableNoclip( ply )
 	return ply:IsAdmin()
 end
 
---Temp
-/*
 --Disconnect message
 function GM:PlayerDisconnected( ply )
-	print("Player: " .. ply:Name() .. " has left the server." )
+	print("Player: " .. ply:Name() .. " (" .. ply:SteamID() .. ")" .. " has left the server." )
 end
-*/
 
 --Add hooks
 hook.Add( "PlayerNoClip", "DisableNoclip", DisableNoclip )
