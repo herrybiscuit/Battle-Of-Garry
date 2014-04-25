@@ -27,6 +27,11 @@ local files, folders = file.Find(fol .. "*", "LUA") --Get all module files
 for _,folder in SortedPairs(folders, true) do
 	if folder == "." or folder == ".." then continue end --If no files then stop
 	
+	for _, File in SortedPairs(file.Find(fol .. folder .."/sh_*.lua", "LUA"), true) do
+		AddCSLuaFile(fol..folder .. "/" ..File)
+		include(fol.. folder .. "/" ..File)
+	end
+	
 	--Load module server files
 	for _, File in SortedPairs(file.Find(fol .. folder .."/sv_*.lua", "LUA"), true) do --Get server files
 		include(fol.. folder .. "/" ..File) --Include module's server lua files
